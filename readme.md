@@ -3,6 +3,15 @@
 # API RESTful 
 
 ```
-DB::connection()->getPdo(); # check connect to db
-composer require barryvdh/laravel-debugbar --dev # i debugbar
+DB::connection()->getPdo();                         # check connect to db
+composer require barryvdh/laravel-debugbar --dev    # i debugbar
+
+php artisan make:model Book -m                      # table books
+php artisan make:factory BookFactory --model=Book   # use faker
+php artisan make:seeder BooksTableSeeder            # renders data seeder
+
+php artisan migrate --seed  -->  default migrate & seed first time
+    php artisan db:seed --class=UsersTableSeeder # -> only seed by class
+    php artisan migrate:reset --seed # -> drop all table & data's 
+    php artisan migrate:fresh --seed # -> rerender migrate table & down data seed
 ```
